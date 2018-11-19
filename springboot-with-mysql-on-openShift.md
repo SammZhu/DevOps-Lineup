@@ -54,7 +54,7 @@ $ docker build -t springboot_mysql -f ./dockerfile_springboot_mysql .
 $ docker images
 ```
 
-2. 将标记springboot_mysql添加到图像，并将其推送到OpenShift注册表：
+2. 将标记springboot_mysql添加到镜像，并将其推送到OpenShift注册表：
 
 ```shell
 $ docker tag springboot_mysql $(minishift openshift registry)/myproject/springboot_mysql
