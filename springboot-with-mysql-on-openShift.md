@@ -6,7 +6,7 @@
 
 如何创建Spring Boot应用程序，可以将  [这篇文章](https://spring.io/guides/gs/accessing-data-mysql/)  作为指南。同时使用现有的[centos/mysql-57-centos7](https://docs.openshift.com/container-platform/3.11/using_images/db_images/mysql.html)镜像将MySQL部署到OpenShift。
 
-在本文将在本地构建容器映像，因此您需要能够使用Maven工具，并可以从*[github仓库](https://github.com/1984shekhar/POC/tree/master/mysql-springboot-docker-openshift)*下载引用到的原代码进行编译。此示例使用*com.sample.app.MainController.java*类公开REST服务。
+在本文将在本地构建容器映像，因此您需要能够使用Maven工具，并可以从[github仓库](https://github.com/1984shekhar/POC/tree/master/mysql-springboot-docker-openshift)下载引用到的原代码进行编译。此示例使用*com.sample.app.MainController.java*类公开REST服务。
 
 在代码库的`src/main/docker-files/`路径下可以找到一个Dockerfile名为*dockerfile_springboot_mysql*。这个文件负责创建一个基于 *java8 Docker*镜像的*Spring Boot*应用Docker镜像。这可以用于测试，但对于生产部署，出于对您的生产系统安全性和业务连续性的保证，还是需要使用基于Red Hat Enterprise Linux的镜像。
 
