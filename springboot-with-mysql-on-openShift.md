@@ -74,7 +74,7 @@ $ docker push $(oc registry info)/myproject/springboot_mysql
 
 ```shell
 $ docker pull openshift/mysql-55-centos7
-$ oc new-project test
+$ oc new-project myproject
 $ oc new-app -e MYSQL_USER=test -e MYSQL_PASSWORD=test -e MYSQL_DATABASE=test openshift/mysql-55-centos7
 ```
 
