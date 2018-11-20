@@ -74,7 +74,7 @@ $ docker push $(oc registry info)/myproject/springboot_mysql
 
 ```shell
 $ docker pull openshift/mysql-55-centos7
-$ oc new-app -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_DATABASE=test openshift/mysql-55-centos7
+$ oc new-app -e MYSQL_USER=test -e MYSQL_PASSWORD=test -e MYSQL_DATABASE=test openshift/mysql-55-centos7
 ```
 
 4. 稍后，运行MySQL的pod会准备就绪。您可以使用以下方式检查状态`oc get pods`：
