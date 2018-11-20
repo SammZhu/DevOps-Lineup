@@ -61,6 +61,13 @@ $ docker tag springboot_mysql $(minishift openshift registry)/myproject/springbo
 $ docker push $(minishift openshift registry)/myproject/springboot_mysql
 ```
 
+非minishift环境使用如下命令：
+
+```shell
+$ docker tag springboot_mysql $(oc registry info)/myproject/springboot_mysql
+$ docker push $(oc registry info)/myproject/springboot_mysql
+```
+
 3. 接下来，拉出OpenShift  *MySQL*映像，并将其创建为OpenShift应用程序，该应用程序将初始化并运行它。有关更多信息，请参阅 [文档](https://docs.openshift.com/container-platform/3.11/using_images/db_images/mysql.html)：
 
 ```shell
