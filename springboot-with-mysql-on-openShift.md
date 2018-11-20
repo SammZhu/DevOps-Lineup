@@ -64,6 +64,8 @@ $ docker push $(minishift openshift registry)/myproject/springboot_mysql
 非minishift环境使用如下命令：
 
 ```shell
+$ oc login -u admin
+$ docker login -u admin -p $(oc whoami -t) $(oc registry info)
 $ docker tag springboot_mysql $(oc registry info)/myproject/springboot_mysql
 $ docker push $(oc registry info)/myproject/springboot_mysql
 ```
