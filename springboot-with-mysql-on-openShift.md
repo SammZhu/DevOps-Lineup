@@ -4,7 +4,7 @@
 
 开发人员在本地机器上使用OpenShift进行开发和测试，通常推荐使用  [*红帽容器开发套件（CDK）*](https://developers.redhat.com/products/cdk/overview/)，它提供了基于minishift的可在在Red Hat Enterprise Linux VM（红帽的虚拟机产品）中运行的单节点OpenShift集群。这些产品都是开源产品，您可以在Windows、macOS或Red Hat Enterprise Linux之上运行CDK。本次测试使用了Red Hat Enterprise Linux Workstation 7.3版，它同样也适用于macOS。
 
-如何创建Spring Boot应用程序，可以将  [这篇文章](https://spring.io/guides/gs/accessing-data-mysql/)  作为指南。同时使用现有的[centos/mysql-57-centos7](https://docs.openshift.com/container-platform/3.11/using_images/db_images/mysql.html)镜像将MySQL部署到OpenShift。
+如何创建Spring Boot应用程序，可以将  [这篇文章](https://spring.io/guides/gs/accessing-data-mysql/)  作为指南。同时使用现有的[openshift/mysql-55-centos7](https://docs.openshift.com/container-platform/3.11/using_images/db_images/mysql.html)镜像将MySQL部署到OpenShift。
 
 在本文将在本地构建容器映像，因此您需要能够使用Maven工具，并可以从[*github仓库*](https://github.com/1984shekhar/POC/tree/master/mysql-springboot-docker-openshift)下载引用到的原代码进行编译。此示例使用*com.sample.app.MainController.java*类公开REST服务。
 
@@ -73,8 +73,8 @@ $ docker push $(oc registry info)/myproject/springboot_mysql
 3. 接下来，拉出OpenShift  *MySQL*映像，并将其创建为OpenShift应用程序，该应用程序将初始化并运行它。有关更多信息，请参阅 [文档](https://docs.openshift.com/container-platform/3.11/using_images/db_images/mysql.html)：
 
 ```shell
-$ docker pull centos/mysql-57-centos7
-$ oc new-app -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_DATABASE=test centos/mysql-57-centos7
+$ docker pull openshift/mysql-55-centos7
+$ oc new-app -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_DATABASE=test openshift/mysql-55-centos7
 ```
 
 4. 稍后，运行MySQL的pod会准备就绪。您可以使用以下方式检查状态`oc get pods`：
