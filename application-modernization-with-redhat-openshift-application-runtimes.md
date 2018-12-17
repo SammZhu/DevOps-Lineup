@@ -14,7 +14,7 @@
 
 ### 微服务与单体应用程序
 
-![Microservices vs. Monolithic Applications](assets\2.png)
+![Microservices vs. Monolithic Applications](assets/2.png)
 
 单体应用把所有功能放在单个处理线程中，通过在多个服务中部署副本来进行应用扩展。
 
